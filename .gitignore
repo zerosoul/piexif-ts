@@ -1,6 +1,10 @@
-README.md
-
 *.bat
 _images
 docs/_build/
 *.db
+npm-debug.log
+
+node_modules
+dist
+.rpt2_cache
+lib/

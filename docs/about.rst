@@ -2,6 +2,17 @@
 About Piexifjs
 ==============
 
+Notice and Warning!
+-------------------
+
+We are implementing v2.0. This version would include a few big changes. If you won't ready to use, don't update this library.
+
+- add some arguments type checks 
+- stop to support bower
+- some data types are changed in exif object...?
+
+Some names in this libary will be changed until beta version.
+
 What for?
 ---------
 
@@ -17,6 +28,8 @@ There are only just four functions.
 - *insert(exifbytes, jpegData)* - Insert exif into JPEG.
 - *remove(jpegData)* - Remove exif from JPEG.
 
+and some utilities.
+
 Dependency
 ----------
 
@@ -25,7 +38,7 @@ No dependencies.
 Environment
 -----------
 
-Tested on IE11, Opera28, and PhantomJS 1.9.8. It runs on even Node.js.
+Both client-side and server-side. Piexifjs is transpiled as `Universal Module Definition <https://github.com/umdjs/umd>`_.
 
 License
 -------

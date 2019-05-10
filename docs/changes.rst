@@ -1,6 +1,12 @@
 Changelog
 =========
 
+2.0.0(Not Completed)
+--------------------
+
+- Some name spaces are changed.
+- Checking types for some argumetns.
+
 1.03
 ----
 

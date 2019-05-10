@@ -16,16 +16,16 @@ Insert Exif into jpeg
         var zeroth = {};
         var exif = {};
         var gps = {};
-        zeroth[piexif.ImageIFD.Make] = "Make";
-        zeroth[piexif.ImageIFD.XResolution] = [777, 1];
-        zeroth[piexif.ImageIFD.YResolution] = [777, 1];
-        zeroth[piexif.ImageIFD.Software] = "Piexifjs";
-        exif[piexif.ExifIFD.DateTimeOriginal] = "2010:10:10 10:10:10";
-        exif[piexif.ExifIFD.LensMake] = "LensMake";
-        exif[piexif.ExifIFD.Sharpness] = 777;
-        exif[piexif.ExifIFD.LensSpecification] = [[1, 1], [1, 1], [1, 1], [1, 1]];
-        gps[piexif.GPSIFD.GPSVersionID] = [7, 7, 7, 7];
-        gps[piexif.GPSIFD.GPSDateStamp] = "1999:99:99 99:99:99";
+        zeroth[piexif.TagValues.ImageIFD.Make] = "Make";
+        zeroth[piexif.TagValues.ImageIFD.XResolution] = [777, 1];
+        zeroth[piexif.TagValues.ImageIFD.YResolution] = [777, 1];
+        zeroth[piexif.TagValues.ImageIFD.Software] = "Piexifjs";
+        exif[piexif.TagValues.ExifIFD.DateTimeOriginal] = "2010:10:10 10:10:10";
+        exif[piexif.TagValues.ExifIFD.LensMake] = "LensMake";
+        exif[piexif.TagValues.ExifIFD.Sharpness] = 777;
+        exif[piexif.TagValues.ExifIFD.LensSpecification] = [[1, 1], [1, 1], [1, 1], [1, 1]];
+        gps[piexif.TagValues.GPSIFD.GPSVersionID] = [7, 7, 7, 7];
+        gps[piexif.TagValues.GPSIFD.GPSDateStamp] = "1999:99:99 99:99:99";
         var exifObj = {"0th":zeroth, "Exif":exif, "GPS":gps};
         var exifbytes = piexif.dump(exifObj);
 
@@ -60,7 +60,7 @@ Read Exif Values
             }
             console.log("-" + ifd);
             for (var tag in exifObj[ifd]) {
-                console.log("  " + piexif.TAGS[ifd][tag]["name"] + ":" + exifObj[ifd][tag]);
+                console.log("  " + piexif.Tags[ifd][tag]["name"] + ":" + exifObj[ifd][tag]);
             }
         }
     };
@@ -99,7 +99,7 @@ Generates Rotated JPEG
                 var exif = piexif.load(e.target.result);
                 var image = new Image();
                 image.onload = function () {
-                    var orientation = exif["0th"][piexif.ImageIFD.Orientation];
+                    var orientation = exif["0th"][piexif.TagValues.ImageIFD.Orientation];
 
                     var canvas = document.createElement("canvas");
                     canvas.width = image.width;
@@ -111,10 +111,6 @@ Generates Rotated JPEG
                     if (orientation == 2) {
                         x = -canvas.width;
                         ctx.scale(-1, 1);
-                    } else if (orientation == 3) {
-                        x = -canvas.width;
-                        y = -canvas.height;
-                        ctx.scale(-1, -1);
                     } else if (orientation == 3) {
                         x = -canvas.width;
                         y = -canvas.height;
@@ -181,10 +177,10 @@ GPS Coordinates
 
     var lat = 59.43553989213321;
     var lng = 24.73842144012451;
-    gpsIfd[piexif.GPSIFD.GPSLatitudeRef] = lat < 0 ? 'S' : 'N';
-    gpsIfd[piexif.GPSIFD.GPSLatitude] = piexif.GPSHelper.degToDmsRational(lat);
-    gpsIfd[piexif.GPSIFD.GPSLongitudeRef] = lng < 0 ? 'W' : 'E';
-    gpsIfd[piexif.GPSIFD.GPSLongitude] = piexif.GPSHelper.degToDmsRational(lng);
+    gpsIfd[piexif.TagValues.GPSIFD.GPSLatitudeRef] = lat < 0 ? 'S' : 'N';
+    gpsIfd[piexif.TagValues.GPSIFD.GPSLatitude] = piexif.GPSHelper.degToDmsRational(lat);
+    gpsIfd[piexif.TagValues.GPSIFD.GPSLongitudeRef] = lng < 0 ? 'W' : 'E';
+    gpsIfd[piexif.TagValues.GPSIFD.GPSLongitude] = piexif.GPSHelper.degToDmsRational(lng);
 
 
 Node.js
@@ -204,16 +200,16 @@ Node.js
     var zeroth = {};
     var exif = {};
     var gps = {};
-    zeroth[piexif.ImageIFD.Make] = "Make";
-    zeroth[piexif.ImageIFD.XResolution] = [777, 1];
-    zeroth[piexif.ImageIFD.YResolution] = [777, 1];
-    zeroth[piexif.ImageIFD.Software] = "Piexifjs";
-    exif[piexif.ExifIFD.DateTimeOriginal] = "2010:10:10 10:10:10";
-    exif[piexif.ExifIFD.LensMake] = "LensMake";
-    exif[piexif.ExifIFD.Sharpness] = 777;
-    exif[piexif.ExifIFD.LensSpecification] = [[1, 1], [1, 1], [1, 1], [1, 1]];
-    gps[piexif.GPSIFD.GPSVersionID] = [7, 7, 7, 7];
-    gps[piexif.GPSIFD.GPSDateStamp] = "1999:99:99 99:99:99";
+    zeroth[piexif.TagValues.ImageIFD.Make] = "Make";
+    zeroth[piexif.TagValues.ImageIFD.XResolution] = [777, 1];
+    zeroth[piexif.TagValues.ImageIFD.YResolution] = [777, 1];
+    zeroth[piexif.TagValues.ImageIFD.Software] = "Piexifjs";
+    exif[piexif.TagValues.ExifIFD.DateTimeOriginal] = "2010:10:10 10:10:10";
+    exif[piexif.TagValues.ExifIFD.LensMake] = "LensMake";
+    exif[piexif.TagValues.ExifIFD.Sharpness] = 777;
+    exif[piexif.TagValues.ExifIFD.LensSpecification] = [[1, 1], [1, 1], [1, 1], [1, 1]];
+    gps[piexif.TagValues.GPSIFD.GPSVersionID] = [7, 7, 7, 7];
+    gps[piexif.TagValues.GPSIFD.GPSDateStamp] = "1999:99:99 99:99:99";
     var exifObj = {"0th":zeroth, "Exif":exif, "GPS":gps};
     var exifbytes = piexif.dump(exifObj);
 
