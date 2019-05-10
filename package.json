@@ -1,6 +1,6 @@
 {
   "name": "piexif-ts",
-  "version": "2.0.8",
+  "version": "2.0.9",
   "description": "Read and write exif with typescript!",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,6 +24,7 @@
     "build": "tsc",
     "build:watch": "tsc -w",
     "lint": "tslint -p tsconfig.json",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
