@@ -8,7 +8,9 @@
     "rules": {
         "no-string-literal": false,
         "prefer-const": false,
-        "one-variable-per-declaration": false
+        "one-variable-per-declaration": false,
+        "triple-equals": false,
+        "no-shadowed-variable": false
     },
     "rulesDirectory": []
 }
