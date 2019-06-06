@@ -1,3 +1,4 @@
+/* tslint:disable */
 export const GPSHelper = {
   degToDmsRational: (degFloat: number) => {
     var degAbs = Math.abs(degFloat);

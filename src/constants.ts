@@ -1,3 +1,4 @@
+/* tslint:disable */
 interface ITypes {
   [key: string]: number;
 }

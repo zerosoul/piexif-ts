@@ -1,3 +1,4 @@
+/* tslint:disable */
 import * as constants from './constants';
 import * as exceptions from './exceptions';
 
