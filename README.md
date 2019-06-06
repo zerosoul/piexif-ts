@@ -5,23 +5,11 @@ Piexifjs
 -------------------------------------------------------------------------------------------------------------------|-----------
 [![Build Status](https://travis-ci.org/hMatoba/piexifjs.svg?branch=2.0)](https://travis-ci.org/hMatoba/piexifjs)|[![CircleCI](https://circleci.com/gh/hMatoba/piexifjs/tree/2.0.svg?style=svg)](https://circleci.com/gh/hMatoba/piexifjs/tree/2.0)
 
-Notice and Warning!
--------------------
-
-We will release v2.0 soon. This version would include a few big changes. If you won't ready to use, don't update this library.
+This repository is forked from [piexifjs](https://github.com/hMatoba/piexifjs) and all praise should go to the creator of this great library.
  
 ```
-npm install piexifjs@1.0.4
+npm install piexif-ts
 ```
- 
-Thank you for using piexifjs!
-
-version 2.0
------------
-
-- add some arguments type checks 
-- stop to support bower
-- some data types are changed in exif?
 
 How to Use
 ----------

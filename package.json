@@ -3,13 +3,15 @@
   "version": "2.0.10",
   "description": "Read and write exif with typescript!",
   "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "browser": "dist/index.browser.js",
   "types": "dist/index.d.ts",
   "files": [
     "/lib"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/hMatoba/piexifjs.git"
+    "url": "https://github.com/holwech/piexif-ts.git"
   },
   "keywords": [
     "jpeg",
@@ -21,8 +23,7 @@
     "node-test": "jest --config=jest.node.config.js",
     "browser-test": "jest --config=jest.puppeteer.config.js",
     "test": "npm run node-test && npm run browser-test",
-    "build": "tsc",
-    "build:watch": "tsc -w",
+    "build": "rollup -cw && tsc",
     "lint": "tslint -p tsconfig.json",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "prepare": "npm run build",
@@ -34,10 +35,11 @@
   "author": "hMatoba, Joachim Holwech",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/hMatoba/piexifjs/issues"
+    "url": "https://github.com/holwech/piexif-ts/issues"
   },
-  "homepage": "https://github.com/hMatoba/piexifjs",
+  "homepage": "https://github.com/holwech/piexif-ts",
   "devDependencies": {
+    "@types/node": "^12.0.5",
     "chalk": "^2.4.1",
     "jest": "^23.5.0",
     "jest-puppeteer": "^3.3.1",
@@ -45,6 +47,8 @@
     "prettier": "^1.14.2",
     "puppeteer": "^1.4.0",
     "rimraf": "^2.6.2",
+    "rollup": "^1.14.2",
+    "rollup-plugin-terser": "^5.0.0",
     "rollup-plugin-typescript2": "^0.16.1",
     "ts-loader": "^4.5.0",
     "typescript": "^3.0.1"
