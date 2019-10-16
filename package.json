@@ -5,9 +5,14 @@
   "main": "dist/piexif.js",
   "module": "dist/piexif.es.js",
   "browser": "dist/piexif.browser.js",
-  "types": "dist/piexif.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
-    "/dist"
+    "dist/piexif.js",
+    "dist/piexif.js.map",
+    "dist/*.d.ts",
+    "LICENSE.txt",
+    "README.md",
+    "package.json"
   ],
   "repository": {
     "type": "git",
