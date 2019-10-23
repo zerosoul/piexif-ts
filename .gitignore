@@ -7,4 +7,8 @@ npm-debug.log
 node_modules
 dist
 .rpt2_cache
-lib/
+
+/dist
+
+.vscode
+/lib

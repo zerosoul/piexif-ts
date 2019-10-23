@@ -1,24 +1,6 @@
-/* tslint:disable */
-interface ITypes {
-  [key: string]: number;
-}
+import { Types, ITags, ITagValues } from './interfaces';
 
-export const Types: ITypes = {
-  Byte: 1,
-  Ascii: 2,
-  Short: 3,
-  Long: 4,
-  Rational: 5,
-  Undefined: 7,
-  SLong: 9,
-  SRational: 10,
-};
-
-interface ITypeNums {
-  [key: number]: string;
-}
-
-export const TypeNums: ITypeNums = {
+export const TypeNums: { [key: number]: string } = {
   1: 'Byte',
   2: 'Ascii',
   3: 'Short',
@@ -29,729 +11,733 @@ export const TypeNums: ITypeNums = {
   10: 'SRational',
 };
 
-export const Tags: any = {
-  Image: {
-    11: {
-      name: 'ProcessingSoftware',
-      type: Types.Ascii,
-    },
-    254: {
-      name: 'NewSubfileType',
-      type: Types.Long,
-    },
-    255: {
-      name: 'SubfileType',
-      type: Types.Short,
-    },
-    256: {
-      name: 'ImageWidth',
-      type: Types.Long,
-    },
-    257: {
-      name: 'ImageLength',
-      type: Types.Long,
-    },
-    258: {
-      name: 'BitsPerSample',
-      type: Types.Short,
-    },
-    259: {
-      name: 'Compression',
-      type: Types.Short,
-    },
-    262: {
-      name: 'PhotometricInterpretation',
-      type: Types.Short,
-    },
-    263: {
-      name: 'Threshholding',
-      type: Types.Short,
-    },
-    264: {
-      name: 'CellWidth',
-      type: Types.Short,
-    },
-    265: {
-      name: 'CellLength',
-      type: Types.Short,
-    },
-    266: {
-      name: 'FillOrder',
-      type: Types.Short,
-    },
-    269: {
-      name: 'DocumentName',
-      type: Types.Ascii,
-    },
-    270: {
-      name: 'ImageDescription',
-      type: Types.Ascii,
-    },
-    271: {
-      name: 'Make',
-      type: Types.Ascii,
-    },
-    272: {
-      name: 'Model',
-      type: Types.Ascii,
-    },
-    273: {
-      name: 'StripOffsets',
-      type: Types.Long,
-    },
-    274: {
-      name: 'Orientation',
-      type: Types.Short,
-    },
-    277: {
-      name: 'SamplesPerPixel',
-      type: Types.Short,
-    },
-    278: {
-      name: 'RowsPerStrip',
-      type: Types.Long,
-    },
-    279: {
-      name: 'StripByteCounts',
-      type: Types.Long,
-    },
-    282: {
-      name: 'XResolution',
-      type: Types.Rational,
-    },
-    283: {
-      name: 'YResolution',
-      type: Types.Rational,
-    },
-    284: {
-      name: 'PlanarConfiguration',
-      type: Types.Short,
-    },
-    290: {
-      name: 'GrayResponseUnit',
-      type: Types.Short,
-    },
-    291: {
-      name: 'GrayResponseCurve',
-      type: Types.Short,
-    },
-    292: {
-      name: 'T4Options',
-      type: Types.Long,
-    },
-    293: {
-      name: 'T6Options',
-      type: Types.Long,
-    },
-    296: {
-      name: 'ResolutionUnit',
-      type: Types.Short,
-    },
-    301: {
-      name: 'TransferFunction',
-      type: Types.Short,
-    },
-    305: {
-      name: 'Software',
-      type: Types.Ascii,
-    },
-    306: {
-      name: 'DateTime',
-      type: Types.Ascii,
-    },
-    315: {
-      name: 'Artist',
-      type: Types.Ascii,
-    },
-    316: {
-      name: 'HostComputer',
-      type: Types.Ascii,
-    },
-    317: {
-      name: 'Predictor',
-      type: Types.Short,
-    },
-    318: {
-      name: 'WhitePoint',
-      type: Types.Rational,
-    },
-    319: {
-      name: 'PrimaryChromaticities',
-      type: Types.Rational,
-    },
-    320: {
-      name: 'ColorMap',
-      type: Types.Short,
-    },
-    321: {
-      name: 'HalftoneHints',
-      type: Types.Short,
-    },
-    322: {
-      name: 'TileWidth',
-      type: Types.Short,
-    },
-    323: {
-      name: 'TileLength',
-      type: Types.Short,
-    },
-    324: {
-      name: 'TileOffsets',
-      type: Types.Short,
-    },
-    325: {
-      name: 'TileByteCounts',
-      type: Types.Short,
-    },
-    330: {
-      name: 'SubIFDs',
-      type: Types.Long,
-    },
-    332: {
-      name: 'InkSet',
-      type: Types.Short,
-    },
-    333: {
-      name: 'InkNames',
-      type: Types.Ascii,
-    },
-    334: {
-      name: 'NumberOfInks',
-      type: Types.Short,
-    },
-    336: {
-      name: 'DotRange',
-      type: Types.Byte,
-    },
-    337: {
-      name: 'TargetPrinter',
-      type: Types.Ascii,
-    },
-    338: {
-      name: 'ExtraSamples',
-      type: Types.Short,
-    },
-    339: {
-      name: 'SampleFormat',
-      type: Types.Short,
-    },
-    340: {
-      name: 'SMinSampleValue',
-      type: Types.Short,
-    },
-    341: {
-      name: 'SMaxSampleValue',
-      type: Types.Short,
-    },
-    342: {
-      name: 'TransferRange',
-      type: Types.Short,
-    },
-    343: {
-      name: 'ClipPath',
-      type: Types.Byte,
-    },
-    344: {
-      name: 'XClipPathUnits',
-      type: Types.Long,
-    },
-    345: {
-      name: 'YClipPathUnits',
-      type: Types.Long,
-    },
-    346: {
-      name: 'Indexed',
-      type: Types.Short,
-    },
-    347: {
-      name: 'JPEGTables',
-      type: Types.Undefined,
-    },
-    351: {
-      name: 'OPIProxy',
-      type: Types.Short,
-    },
-    512: {
-      name: 'JPEGProc',
-      type: Types.Long,
-    },
-    513: {
-      name: 'JPEGInterchangeFormat',
-      type: Types.Long,
-    },
-    514: {
-      name: 'JPEGInterchangeFormatLength',
-      type: Types.Long,
-    },
-    515: {
-      name: 'JPEGRestartInterval',
-      type: Types.Short,
-    },
-    517: {
-      name: 'JPEGLosslessPredictors',
-      type: Types.Short,
-    },
-    518: {
-      name: 'JPEGPointTransforms',
-      type: Types.Short,
-    },
-    519: {
-      name: 'JPEGQTables',
-      type: Types.Long,
-    },
-    520: {
-      name: 'JPEGDCTables',
-      type: Types.Long,
-    },
-    521: {
-      name: 'JPEGACTables',
-      type: Types.Long,
-    },
-    529: {
-      name: 'YCbCrCoefficients',
-      type: Types.Rational,
-    },
-    530: {
-      name: 'YCbCrSubSampling',
-      type: Types.Short,
-    },
-    531: {
-      name: 'YCbCrPositioning',
-      type: Types.Short,
-    },
-    532: {
-      name: 'ReferenceBlackWhite',
-      type: Types.Rational,
-    },
-    700: {
-      name: 'XMLPacket',
-      type: Types.Byte,
-    },
-    18246: {
-      name: 'Rating',
-      type: Types.Short,
-    },
-    18249: {
-      name: 'RatingPercent',
-      type: Types.Short,
-    },
-    32781: {
-      name: 'ImageID',
-      type: Types.Ascii,
-    },
-    33421: {
-      name: 'CFARepeatPatternDim',
-      type: Types.Short,
-    },
-    33422: {
-      name: 'CFAPattern',
-      type: Types.Byte,
-    },
-    33423: {
-      name: 'BatteryLevel',
-      type: Types.Rational,
-    },
-    33432: {
-      name: 'Copyright',
-      type: Types.Ascii,
-    },
-    33434: {
-      name: 'ExposureTime',
-      type: Types.Rational,
-    },
-    34377: {
-      name: 'ImageResources',
-      type: Types.Byte,
-    },
-    34665: {
-      name: 'ExifTag',
-      type: Types.Long,
-    },
-    34675: {
-      name: 'InterColorProfile',
-      type: Types.Undefined,
-    },
-    34853: {
-      name: 'GPSTag',
-      type: Types.Long,
-    },
-    34857: {
-      name: 'Interlace',
-      type: Types.Short,
-    },
-    34858: {
-      name: 'TimeZoneOffset',
-      type: Types.Long,
-    },
-    34859: {
-      name: 'SelfTimerMode',
-      type: Types.Short,
-    },
-    37387: {
-      name: 'FlashEnergy',
-      type: Types.Rational,
-    },
-    37388: {
-      name: 'SpatialFrequencyResponse',
-      type: Types.Undefined,
-    },
-    37389: {
-      name: 'Noise',
-      type: Types.Undefined,
-    },
-    37390: {
-      name: 'FocalPlaneXResolution',
-      type: Types.Rational,
-    },
-    37391: {
-      name: 'FocalPlaneYResolution',
-      type: Types.Rational,
-    },
-    37392: {
-      name: 'FocalPlaneResolutionUnit',
-      type: Types.Short,
-    },
-    37393: {
-      name: 'ImageNumber',
-      type: Types.Long,
-    },
-    37394: {
-      name: 'SecurityClassification',
-      type: Types.Ascii,
-    },
-    37395: {
-      name: 'ImageHistory',
-      type: Types.Ascii,
-    },
-    37397: {
-      name: 'ExposureIndex',
-      type: Types.Rational,
-    },
-    37398: {
-      name: 'TIFFEPStandardID',
-      type: Types.Byte,
-    },
-    37399: {
-      name: 'SensingMethod',
-      type: Types.Short,
-    },
-    40091: {
-      name: 'XPTitle',
-      type: Types.Byte,
-    },
-    40092: {
-      name: 'XPComment',
-      type: Types.Byte,
-    },
-    40093: {
-      name: 'XPAuthor',
-      type: Types.Byte,
-    },
-    40094: {
-      name: 'XPKeywords',
-      type: Types.Byte,
-    },
-    40095: {
-      name: 'XPSubject',
-      type: Types.Byte,
-    },
-    50341: {
-      name: 'PrintImageMatching',
-      type: Types.Undefined,
-    },
-    50706: {
-      name: 'DNGVersion',
-      type: Types.Byte,
-    },
-    50707: {
-      name: 'DNGBackwardVersion',
-      type: Types.Byte,
-    },
-    50708: {
-      name: 'UniqueCameraModel',
-      type: Types.Ascii,
-    },
-    50709: {
-      name: 'LocalizedCameraModel',
-      type: Types.Byte,
-    },
-    50710: {
-      name: 'CFAPlaneColor',
-      type: Types.Byte,
-    },
-    50711: {
-      name: 'CFALayout',
-      type: Types.Short,
-    },
-    50712: {
-      name: 'LinearizationTable',
-      type: Types.Short,
-    },
-    50713: {
-      name: 'BlackLevelRepeatDim',
-      type: Types.Short,
-    },
-    50714: {
-      name: 'BlackLevel',
-      type: Types.Rational,
-    },
-    50715: {
-      name: 'BlackLevelDeltaH',
-      type: Types.SRational,
-    },
-    50716: {
-      name: 'BlackLevelDeltaV',
-      type: Types.SRational,
-    },
-    50717: {
-      name: 'WhiteLevel',
-      type: Types.Short,
-    },
-    50718: {
-      name: 'DefaultScale',
-      type: Types.Rational,
-    },
-    50719: {
-      name: 'DefaultCropOrigin',
-      type: Types.Short,
-    },
-    50720: {
-      name: 'DefaultCropSize',
-      type: Types.Short,
-    },
-    50721: {
-      name: 'ColorMatrix1',
-      type: Types.SRational,
-    },
-    50722: {
-      name: 'ColorMatrix2',
-      type: Types.SRational,
-    },
-    50723: {
-      name: 'CameraCalibration1',
-      type: Types.SRational,
-    },
-    50724: {
-      name: 'CameraCalibration2',
-      type: Types.SRational,
-    },
-    50725: {
-      name: 'ReductionMatrix1',
-      type: Types.SRational,
-    },
-    50726: {
-      name: 'ReductionMatrix2',
-      type: Types.SRational,
-    },
-    50727: {
-      name: 'AnalogBalance',
-      type: Types.Rational,
-    },
-    50728: {
-      name: 'AsShotNeutral',
-      type: Types.Short,
-    },
-    50729: {
-      name: 'AsShotWhiteXY',
-      type: Types.Rational,
-    },
-    50730: {
-      name: 'BaselineExposure',
-      type: Types.SRational,
-    },
-    50731: {
-      name: 'BaselineNoise',
-      type: Types.Rational,
-    },
-    50732: {
-      name: 'BaselineSharpness',
-      type: Types.Rational,
-    },
-    50733: {
-      name: 'BayerGreenSplit',
-      type: Types.Long,
-    },
-    50734: {
-      name: 'LinearResponseLimit',
-      type: Types.Rational,
-    },
-    50735: {
-      name: 'CameraSerialNumber',
-      type: Types.Ascii,
-    },
-    50736: {
-      name: 'LensInfo',
-      type: Types.Rational,
-    },
-    50737: {
-      name: 'ChromaBlurRadius',
-      type: Types.Rational,
-    },
-    50738: {
-      name: 'AntiAliasStrength',
-      type: Types.Rational,
-    },
-    50739: {
-      name: 'ShadowScale',
-      type: Types.SRational,
-    },
-    50740: {
-      name: 'DNGPrivateData',
-      type: Types.Byte,
-    },
-    50741: {
-      name: 'MakerNoteSafety',
-      type: Types.Short,
-    },
-    50778: {
-      name: 'CalibrationIlluminant1',
-      type: Types.Short,
-    },
-    50779: {
-      name: 'CalibrationIlluminant2',
-      type: Types.Short,
-    },
-    50780: {
-      name: 'BestQualityScale',
-      type: Types.Rational,
-    },
-    50781: {
-      name: 'RawDataUniqueID',
-      type: Types.Byte,
-    },
-    50827: {
-      name: 'OriginalRawFileName',
-      type: Types.Byte,
-    },
-    50828: {
-      name: 'OriginalRawFileData',
-      type: Types.Undefined,
-    },
-    50829: {
-      name: 'ActiveArea',
-      type: Types.Short,
-    },
-    50830: {
-      name: 'MaskedAreas',
-      type: Types.Short,
-    },
-    50831: {
-      name: 'AsShotICCProfile',
-      type: Types.Undefined,
-    },
-    50832: {
-      name: 'AsShotPreProfileMatrix',
-      type: Types.SRational,
-    },
-    50833: {
-      name: 'CurrentICCProfile',
-      type: Types.Undefined,
-    },
-    50834: {
-      name: 'CurrentPreProfileMatrix',
-      type: Types.SRational,
-    },
-    50879: {
-      name: 'ColorimetricReference',
-      type: Types.Short,
-    },
-    50931: {
-      name: 'CameraCalibrationSignature',
-      type: Types.Byte,
-    },
-    50932: {
-      name: 'ProfileCalibrationSignature',
-      type: Types.Byte,
-    },
-    50934: {
-      name: 'AsShotProfileName',
-      type: Types.Byte,
-    },
-    50935: {
-      name: 'NoiseReductionApplied',
-      type: Types.Rational,
-    },
-    50936: {
-      name: 'ProfileName',
-      type: Types.Byte,
-    },
-    50937: {
-      name: 'ProfileHueSatMapDims',
-      type: Types.Long,
-    },
-    50941: {
-      name: 'ProfileEmbedPolicy',
-      type: Types.Long,
-    },
-    50942: {
-      name: 'ProfileCopyright',
-      type: Types.Byte,
-    },
-    50964: {
-      name: 'ForwardMatrix1',
-      type: Types.SRational,
-    },
-    50965: {
-      name: 'ForwardMatrix2',
-      type: Types.SRational,
-    },
-    50966: {
-      name: 'PreviewApplicationName',
-      type: Types.Byte,
-    },
-    50967: {
-      name: 'PreviewApplicationVersion',
-      type: Types.Byte,
-    },
-    50968: {
-      name: 'PreviewSettingsName',
-      type: Types.Byte,
-    },
-    50969: {
-      name: 'PreviewSettingsDigest',
-      type: Types.Byte,
-    },
-    50970: {
-      name: 'PreviewColorSpace',
-      type: Types.Long,
-    },
-    50971: {
-      name: 'PreviewDateTime',
-      type: Types.Ascii,
-    },
-    50972: {
-      name: 'RawImageDigest',
-      type: Types.Undefined,
-    },
-    50973: {
-      name: 'OriginalRawFileDigest',
-      type: Types.Undefined,
-    },
-    50974: {
-      name: 'SubTileBlockSize',
-      type: Types.Long,
-    },
-    50975: {
-      name: 'RowInterleaveFactor',
-      type: Types.Long,
-    },
-    50981: {
-      name: 'ProfileLookTableDims',
-      type: Types.Long,
-    },
-    51008: {
-      name: 'OpcodeList1',
-      type: Types.Undefined,
-    },
-    51009: {
-      name: 'OpcodeList2',
-      type: Types.Undefined,
-    },
-    51022: {
-      name: 'OpcodeList3',
-      type: Types.Undefined,
-    },
+const ImageTagElement = {
+  11: {
+    name: 'ProcessingSoftware',
+    type: Types.Ascii,
   },
+  254: {
+    name: 'NewSubfileType',
+    type: Types.Long,
+  },
+  255: {
+    name: 'SubfileType',
+    type: Types.Short,
+  },
+  256: {
+    name: 'ImageWidth',
+    type: Types.Long,
+  },
+  257: {
+    name: 'ImageLength',
+    type: Types.Long,
+  },
+  258: {
+    name: 'BitsPerSample',
+    type: Types.Short,
+  },
+  259: {
+    name: 'Compression',
+    type: Types.Short,
+  },
+  262: {
+    name: 'PhotometricInterpretation',
+    type: Types.Short,
+  },
+  263: {
+    name: 'Threshholding',
+    type: Types.Short,
+  },
+  264: {
+    name: 'CellWidth',
+    type: Types.Short,
+  },
+  265: {
+    name: 'CellLength',
+    type: Types.Short,
+  },
+  266: {
+    name: 'FillOrder',
+    type: Types.Short,
+  },
+  269: {
+    name: 'DocumentName',
+    type: Types.Ascii,
+  },
+  270: {
+    name: 'ImageDescription',
+    type: Types.Ascii,
+  },
+  271: {
+    name: 'Make',
+    type: Types.Ascii,
+  },
+  272: {
+    name: 'Model',
+    type: Types.Ascii,
+  },
+  273: {
+    name: 'StripOffsets',
+    type: Types.Long,
+  },
+  274: {
+    name: 'Orientation',
+    type: Types.Short,
+  },
+  277: {
+    name: 'SamplesPerPixel',
+    type: Types.Short,
+  },
+  278: {
+    name: 'RowsPerStrip',
+    type: Types.Long,
+  },
+  279: {
+    name: 'StripByteCounts',
+    type: Types.Long,
+  },
+  282: {
+    name: 'XResolution',
+    type: Types.Rational,
+  },
+  283: {
+    name: 'YResolution',
+    type: Types.Rational,
+  },
+  284: {
+    name: 'PlanarConfiguration',
+    type: Types.Short,
+  },
+  290: {
+    name: 'GrayResponseUnit',
+    type: Types.Short,
+  },
+  291: {
+    name: 'GrayResponseCurve',
+    type: Types.Short,
+  },
+  292: {
+    name: 'T4Options',
+    type: Types.Long,
+  },
+  293: {
+    name: 'T6Options',
+    type: Types.Long,
+  },
+  296: {
+    name: 'ResolutionUnit',
+    type: Types.Short,
+  },
+  301: {
+    name: 'TransferFunction',
+    type: Types.Short,
+  },
+  305: {
+    name: 'Software',
+    type: Types.Ascii,
+  },
+  306: {
+    name: 'DateTime',
+    type: Types.Ascii,
+  },
+  315: {
+    name: 'Artist',
+    type: Types.Ascii,
+  },
+  316: {
+    name: 'HostComputer',
+    type: Types.Ascii,
+  },
+  317: {
+    name: 'Predictor',
+    type: Types.Short,
+  },
+  318: {
+    name: 'WhitePoint',
+    type: Types.Rational,
+  },
+  319: {
+    name: 'PrimaryChromaticities',
+    type: Types.Rational,
+  },
+  320: {
+    name: 'ColorMap',
+    type: Types.Short,
+  },
+  321: {
+    name: 'HalftoneHints',
+    type: Types.Short,
+  },
+  322: {
+    name: 'TileWidth',
+    type: Types.Short,
+  },
+  323: {
+    name: 'TileLength',
+    type: Types.Short,
+  },
+  324: {
+    name: 'TileOffsets',
+    type: Types.Short,
+  },
+  325: {
+    name: 'TileByteCounts',
+    type: Types.Short,
+  },
+  330: {
+    name: 'SubIFDs',
+    type: Types.Long,
+  },
+  332: {
+    name: 'InkSet',
+    type: Types.Short,
+  },
+  333: {
+    name: 'InkNames',
+    type: Types.Ascii,
+  },
+  334: {
+    name: 'NumberOfInks',
+    type: Types.Short,
+  },
+  336: {
+    name: 'DotRange',
+    type: Types.Byte,
+  },
+  337: {
+    name: 'TargetPrinter',
+    type: Types.Ascii,
+  },
+  338: {
+    name: 'ExtraSamples',
+    type: Types.Short,
+  },
+  339: {
+    name: 'SampleFormat',
+    type: Types.Short,
+  },
+  340: {
+    name: 'SMinSampleValue',
+    type: Types.Short,
+  },
+  341: {
+    name: 'SMaxSampleValue',
+    type: Types.Short,
+  },
+  342: {
+    name: 'TransferRange',
+    type: Types.Short,
+  },
+  343: {
+    name: 'ClipPath',
+    type: Types.Byte,
+  },
+  344: {
+    name: 'XClipPathUnits',
+    type: Types.Long,
+  },
+  345: {
+    name: 'YClipPathUnits',
+    type: Types.Long,
+  },
+  346: {
+    name: 'Indexed',
+    type: Types.Short,
+  },
+  347: {
+    name: 'JPEGTables',
+    type: Types.Undefined,
+  },
+  351: {
+    name: 'OPIProxy',
+    type: Types.Short,
+  },
+  512: {
+    name: 'JPEGProc',
+    type: Types.Long,
+  },
+  513: {
+    name: 'JPEGInterchangeFormat',
+    type: Types.Long,
+  },
+  514: {
+    name: 'JPEGInterchangeFormatLength',
+    type: Types.Long,
+  },
+  515: {
+    name: 'JPEGRestartInterval',
+    type: Types.Short,
+  },
+  517: {
+    name: 'JPEGLosslessPredictors',
+    type: Types.Short,
+  },
+  518: {
+    name: 'JPEGPointTransforms',
+    type: Types.Short,
+  },
+  519: {
+    name: 'JPEGQTables',
+    type: Types.Long,
+  },
+  520: {
+    name: 'JPEGDCTables',
+    type: Types.Long,
+  },
+  521: {
+    name: 'JPEGACTables',
+    type: Types.Long,
+  },
+  529: {
+    name: 'YCbCrCoefficients',
+    type: Types.Rational,
+  },
+  530: {
+    name: 'YCbCrSubSampling',
+    type: Types.Short,
+  },
+  531: {
+    name: 'YCbCrPositioning',
+    type: Types.Short,
+  },
+  532: {
+    name: 'ReferenceBlackWhite',
+    type: Types.Rational,
+  },
+  700: {
+    name: 'XMLPacket',
+    type: Types.Byte,
+  },
+  18246: {
+    name: 'Rating',
+    type: Types.Short,
+  },
+  18249: {
+    name: 'RatingPercent',
+    type: Types.Short,
+  },
+  32781: {
+    name: 'ImageID',
+    type: Types.Ascii,
+  },
+  33421: {
+    name: 'CFARepeatPatternDim',
+    type: Types.Short,
+  },
+  33422: {
+    name: 'CFAPattern',
+    type: Types.Byte,
+  },
+  33423: {
+    name: 'BatteryLevel',
+    type: Types.Rational,
+  },
+  33432: {
+    name: 'Copyright',
+    type: Types.Ascii,
+  },
+  33434: {
+    name: 'ExposureTime',
+    type: Types.Rational,
+  },
+  34377: {
+    name: 'ImageResources',
+    type: Types.Byte,
+  },
+  34665: {
+    name: 'ExifTag',
+    type: Types.Long,
+  },
+  34675: {
+    name: 'InterColorProfile',
+    type: Types.Undefined,
+  },
+  34853: {
+    name: 'GPSTag',
+    type: Types.Long,
+  },
+  34857: {
+    name: 'Interlace',
+    type: Types.Short,
+  },
+  34858: {
+    name: 'TimeZoneOffset',
+    type: Types.Long,
+  },
+  34859: {
+    name: 'SelfTimerMode',
+    type: Types.Short,
+  },
+  37387: {
+    name: 'FlashEnergy',
+    type: Types.Rational,
+  },
+  37388: {
+    name: 'SpatialFrequencyResponse',
+    type: Types.Undefined,
+  },
+  37389: {
+    name: 'Noise',
+    type: Types.Undefined,
+  },
+  37390: {
+    name: 'FocalPlaneXResolution',
+    type: Types.Rational,
+  },
+  37391: {
+    name: 'FocalPlaneYResolution',
+    type: Types.Rational,
+  },
+  37392: {
+    name: 'FocalPlaneResolutionUnit',
+    type: Types.Short,
+  },
+  37393: {
+    name: 'ImageNumber',
+    type: Types.Long,
+  },
+  37394: {
+    name: 'SecurityClassification',
+    type: Types.Ascii,
+  },
+  37395: {
+    name: 'ImageHistory',
+    type: Types.Ascii,
+  },
+  37397: {
+    name: 'ExposureIndex',
+    type: Types.Rational,
+  },
+  37398: {
+    name: 'TIFFEPStandardID',
+    type: Types.Byte,
+  },
+  37399: {
+    name: 'SensingMethod',
+    type: Types.Short,
+  },
+  40091: {
+    name: 'XPTitle',
+    type: Types.Byte,
+  },
+  40092: {
+    name: 'XPComment',
+    type: Types.Byte,
+  },
+  40093: {
+    name: 'XPAuthor',
+    type: Types.Byte,
+  },
+  40094: {
+    name: 'XPKeywords',
+    type: Types.Byte,
+  },
+  40095: {
+    name: 'XPSubject',
+    type: Types.Byte,
+  },
+  50341: {
+    name: 'PrintImageMatching',
+    type: Types.Undefined,
+  },
+  50706: {
+    name: 'DNGVersion',
+    type: Types.Byte,
+  },
+  50707: {
+    name: 'DNGBackwardVersion',
+    type: Types.Byte,
+  },
+  50708: {
+    name: 'UniqueCameraModel',
+    type: Types.Ascii,
+  },
+  50709: {
+    name: 'LocalizedCameraModel',
+    type: Types.Byte,
+  },
+  50710: {
+    name: 'CFAPlaneColor',
+    type: Types.Byte,
+  },
+  50711: {
+    name: 'CFALayout',
+    type: Types.Short,
+  },
+  50712: {
+    name: 'LinearizationTable',
+    type: Types.Short,
+  },
+  50713: {
+    name: 'BlackLevelRepeatDim',
+    type: Types.Short,
+  },
+  50714: {
+    name: 'BlackLevel',
+    type: Types.Rational,
+  },
+  50715: {
+    name: 'BlackLevelDeltaH',
+    type: Types.SRational,
+  },
+  50716: {
+    name: 'BlackLevelDeltaV',
+    type: Types.SRational,
+  },
+  50717: {
+    name: 'WhiteLevel',
+    type: Types.Short,
+  },
+  50718: {
+    name: 'DefaultScale',
+    type: Types.Rational,
+  },
+  50719: {
+    name: 'DefaultCropOrigin',
+    type: Types.Short,
+  },
+  50720: {
+    name: 'DefaultCropSize',
+    type: Types.Short,
+  },
+  50721: {
+    name: 'ColorMatrix1',
+    type: Types.SRational,
+  },
+  50722: {
+    name: 'ColorMatrix2',
+    type: Types.SRational,
+  },
+  50723: {
+    name: 'CameraCalibration1',
+    type: Types.SRational,
+  },
+  50724: {
+    name: 'CameraCalibration2',
+    type: Types.SRational,
+  },
+  50725: {
+    name: 'ReductionMatrix1',
+    type: Types.SRational,
+  },
+  50726: {
+    name: 'ReductionMatrix2',
+    type: Types.SRational,
+  },
+  50727: {
+    name: 'AnalogBalance',
+    type: Types.Rational,
+  },
+  50728: {
+    name: 'AsShotNeutral',
+    type: Types.Short,
+  },
+  50729: {
+    name: 'AsShotWhiteXY',
+    type: Types.Rational,
+  },
+  50730: {
+    name: 'BaselineExposure',
+    type: Types.SRational,
+  },
+  50731: {
+    name: 'BaselineNoise',
+    type: Types.Rational,
+  },
+  50732: {
+    name: 'BaselineSharpness',
+    type: Types.Rational,
+  },
+  50733: {
+    name: 'BayerGreenSplit',
+    type: Types.Long,
+  },
+  50734: {
+    name: 'LinearResponseLimit',
+    type: Types.Rational,
+  },
+  50735: {
+    name: 'CameraSerialNumber',
+    type: Types.Ascii,
+  },
+  50736: {
+    name: 'LensInfo',
+    type: Types.Rational,
+  },
+  50737: {
+    name: 'ChromaBlurRadius',
+    type: Types.Rational,
+  },
+  50738: {
+    name: 'AntiAliasStrength',
+    type: Types.Rational,
+  },
+  50739: {
+    name: 'ShadowScale',
+    type: Types.SRational,
+  },
+  50740: {
+    name: 'DNGPrivateData',
+    type: Types.Byte,
+  },
+  50741: {
+    name: 'MakerNoteSafety',
+    type: Types.Short,
+  },
+  50778: {
+    name: 'CalibrationIlluminant1',
+    type: Types.Short,
+  },
+  50779: {
+    name: 'CalibrationIlluminant2',
+    type: Types.Short,
+  },
+  50780: {
+    name: 'BestQualityScale',
+    type: Types.Rational,
+  },
+  50781: {
+    name: 'RawDataUniqueID',
+    type: Types.Byte,
+  },
+  50827: {
+    name: 'OriginalRawFileName',
+    type: Types.Byte,
+  },
+  50828: {
+    name: 'OriginalRawFileData',
+    type: Types.Undefined,
+  },
+  50829: {
+    name: 'ActiveArea',
+    type: Types.Short,
+  },
+  50830: {
+    name: 'MaskedAreas',
+    type: Types.Short,
+  },
+  50831: {
+    name: 'AsShotICCProfile',
+    type: Types.Undefined,
+  },
+  50832: {
+    name: 'AsShotPreProfileMatrix',
+    type: Types.SRational,
+  },
+  50833: {
+    name: 'CurrentICCProfile',
+    type: Types.Undefined,
+  },
+  50834: {
+    name: 'CurrentPreProfileMatrix',
+    type: Types.SRational,
+  },
+  50879: {
+    name: 'ColorimetricReference',
+    type: Types.Short,
+  },
+  50931: {
+    name: 'CameraCalibrationSignature',
+    type: Types.Byte,
+  },
+  50932: {
+    name: 'ProfileCalibrationSignature',
+    type: Types.Byte,
+  },
+  50934: {
+    name: 'AsShotProfileName',
+    type: Types.Byte,
+  },
+  50935: {
+    name: 'NoiseReductionApplied',
+    type: Types.Rational,
+  },
+  50936: {
+    name: 'ProfileName',
+    type: Types.Byte,
+  },
+  50937: {
+    name: 'ProfileHueSatMapDims',
+    type: Types.Long,
+  },
+  50941: {
+    name: 'ProfileEmbedPolicy',
+    type: Types.Long,
+  },
+  50942: {
+    name: 'ProfileCopyright',
+    type: Types.Byte,
+  },
+  50964: {
+    name: 'ForwardMatrix1',
+    type: Types.SRational,
+  },
+  50965: {
+    name: 'ForwardMatrix2',
+    type: Types.SRational,
+  },
+  50966: {
+    name: 'PreviewApplicationName',
+    type: Types.Byte,
+  },
+  50967: {
+    name: 'PreviewApplicationVersion',
+    type: Types.Byte,
+  },
+  50968: {
+    name: 'PreviewSettingsName',
+    type: Types.Byte,
+  },
+  50969: {
+    name: 'PreviewSettingsDigest',
+    type: Types.Byte,
+  },
+  50970: {
+    name: 'PreviewColorSpace',
+    type: Types.Long,
+  },
+  50971: {
+    name: 'PreviewDateTime',
+    type: Types.Ascii,
+  },
+  50972: {
+    name: 'RawImageDigest',
+    type: Types.Undefined,
+  },
+  50973: {
+    name: 'OriginalRawFileDigest',
+    type: Types.Undefined,
+  },
+  50974: {
+    name: 'SubTileBlockSize',
+    type: Types.Long,
+  },
+  50975: {
+    name: 'RowInterleaveFactor',
+    type: Types.Long,
+  },
+  50981: {
+    name: 'ProfileLookTableDims',
+    type: Types.Long,
+  },
+  51008: {
+    name: 'OpcodeList1',
+    type: Types.Undefined,
+  },
+  51009: {
+    name: 'OpcodeList2',
+    type: Types.Undefined,
+  },
+  51022: {
+    name: 'OpcodeList3',
+    type: Types.Undefined,
+  },
+};
+
+export const Tags: ITags = {
+  Image: ImageTagElement,
+  '0th': ImageTagElement,
+  '1st': ImageTagElement,
   Exif: {
     33434: {
       name: 'ExposureTime',
@@ -1171,10 +1157,8 @@ export const Tags: any = {
     },
   },
 };
-Tags['0th'] = Tags['Image'];
-Tags['1st'] = Tags['Image'];
 
-export const TagValues = {
+export const TagValues: ITagValues = {
   ImageIFD: {
     ProcessingSoftware: 11,
     NewSubfileType: 254,

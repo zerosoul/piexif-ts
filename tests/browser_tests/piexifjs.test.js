@@ -3,7 +3,7 @@ const nodePiexif = require('../../dist/piexif');
 
 const timeout = 5000;
 const jpegBinary = fs.readFileSync("./tests/files/r_canon.jpg").toString("binary");
-const piexifPath = '../../dist/piexif.browser.js';
+const piexifPath = '../../dist/piexif.js';
 
 let page;
 beforeAll(async () => {
