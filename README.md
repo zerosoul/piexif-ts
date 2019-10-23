@@ -1,6 +1,8 @@
 Piexif-ts
 ========
 
+[![Actions Status](https://github.com/{holwech}/{piexif-ts}/workflows/{CI}/badge.svg)](https://github.com/{holwech}/{piexif-ts}/actions)
+
 This repository is forked from [piexifjs](https://github.com/hMatoba/piexifjs) and all praise should go to the creator of this great library.
 
 Fix of the Typescript version of the original [piexifjs](https://github.com/hMatoba/piexifjs) as I was having trouble using it. See original documentation for how to use it.
