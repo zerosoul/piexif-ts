@@ -1,7 +1,7 @@
 Piexif-ts
 ========
 
-[![Actions Status](https://github.com/{holwech}/{piexif-ts}/workflows/{CI}/badge.svg)](https://github.com/{holwech}/{piexif-ts}/actions)
+[![Actions Status](https://github.com/{holwech}/{piexif-ts}/workflows/{main.yml}/badge.svg)](https://github.com/{holwech}/{piexif-ts}/actions)
 
 This repository is forked from [piexifjs](https://github.com/hMatoba/piexifjs) and all praise should go to the creator of this great library.
 
