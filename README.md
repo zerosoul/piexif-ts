@@ -7,6 +7,9 @@ This repository is forked from [piexifjs](https://github.com/hMatoba/piexifjs) a
 
 Fix of the Typescript version of the original [piexifjs](https://github.com/hMatoba/piexifjs) as I was having trouble using it. See original documentation for how to use it.
 
+## Install
+`npm i piexif-ts`
+
 How to Use
 ----------
 
